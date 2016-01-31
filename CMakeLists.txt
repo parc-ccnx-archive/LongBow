@@ -22,7 +22,7 @@ MESSAGE( STATUS "Configuring version ${RELEASE_VERSION}" )
 add_definitions("-DRELEASE_VERSION=\"${RELEASE_VERSION}\"")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
 
-include_directories(${PROJECT_BINARY_DIR}/src ${PROJECT_SOURCE_DIR}/src)
+include_directories(${PROJECT_BINARY_DIR}/src/LongBow ${PROJECT_SOURCE_DIR}/src)
 
 find_package( Doxygen )
 find_package( Uncrustify )

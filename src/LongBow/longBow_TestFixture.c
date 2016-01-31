@@ -28,7 +28,8 @@
  * @author Glenn Scott, Palo Alto Research Center (Xerox PARC)
  * @copyright 2013-2016, Xerox Corporation (Xerox) and Palo Alto Research Center (PARC).  All rights reserved.
  */
-//#include <config.h>
+
+#include "config.h"
 #include <stdio.h>
 
 #include <LongBow/private/longBow_ArrayList.h>

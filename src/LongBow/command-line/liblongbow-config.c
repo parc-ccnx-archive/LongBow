@@ -29,7 +29,7 @@
  * @copyright 2013-2014, Xerox Corporation (Xerox)and Palo Alto Research Center (PARC).  All rights reserved.
  */
 
-#include <LongBow/Configuration.h>
+#include "config.h"
 
 #include <stdio.h>
 #include <unistd.h>

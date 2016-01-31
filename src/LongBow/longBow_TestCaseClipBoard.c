@@ -28,7 +28,7 @@
  * @author Glenn Scott, Palo Alto Research Center (Xerox PARC)
  * @copyright 2013-2014,2015, Xerox Corporation (Xerox) and Palo Alto Research Center (PARC).  All rights reserved.
  */
-//#include <config.h>
+#include <config.h>
 
 #include <stdlib.h>
 

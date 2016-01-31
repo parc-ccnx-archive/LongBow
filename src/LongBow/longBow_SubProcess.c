@@ -28,6 +28,6 @@
  * @author Glenn Scott, Palo Alto Research Center (Xerox PARC)
  * @copyright 2014, Xerox Corporation (Xerox) and Palo Alto Research Center (PARC).  All rights reserved.
  */
-//#include <config.h>
+#include <config.h>
 
 #    include "longBow_SubProcess_Darwin_x86_64.c"

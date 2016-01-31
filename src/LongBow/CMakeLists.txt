@@ -1,7 +1,7 @@
 # Define a few configuration variables that we want accessible in the software
 configure_file(
-        "Configuration.h.in"
-        "Configuration.h"
+  config.h.in
+  config.h
 )
 
 set(LONGBOW_REPORT_HEADER_FILES
@@ -98,7 +98,6 @@ set(LIBLONGBOW_SOURCE_FILES
         longBow_TestFixtureConfig.c
         longBow_TestRunner.c
         longBow_UnitTesting.c
-        Configuration.h.in
 		${LIBLONGBOW_HEADER_FILES})
 
 
