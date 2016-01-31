@@ -27,10 +27,10 @@
 
 // Include the file(s) containing the functions to be tested.
 // This permits internal static functions to be visible to this Test Runner.
+#include "../private/longBow_String.c"
+
 #include <stdio.h>
 #include <inttypes.h>
-
-#include "../private/longBow_String.c"
 
 #include <LongBow/unit-test.h>
 
