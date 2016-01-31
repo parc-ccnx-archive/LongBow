@@ -1,0 +1,17 @@
+# Site settings
+title: LongBow
+email: ccn@ccnx.org
+description: > # this means to ignore newlines until "baseurl:"
+ LongBow is software to help you write better C programs. It provides:
+ A run-time assertion facility to establish strict rules on the state of your program.
+ A testing facility based on the xUnit testing model.
+ Compile-time assistance for writing code meant to be compiled by compilers with different features.
+ LongBow can help you find and manage problems early, establish and maintain confidence in the correctness of your code, make collaboration easier, facilitate future change, and improve overall design.
+ LongBow allows you to take control and establish invariant pre- and post-conditions that detect inconsisten- cies and unexpected results in your programs in order to find bugs and design deficiencies in the code during development rather than waiting for others to find your bugs for you.
+baseurl: "/pages/gscott/LongBow"
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: ccn
+github_username:  ccn
+
+# Build settings
+markdown: kramdown

@@ -1,0 +1,6 @@
+.texpadtmp
+*.aux
+*.log
+*.pdf
+*.out
+*.toc

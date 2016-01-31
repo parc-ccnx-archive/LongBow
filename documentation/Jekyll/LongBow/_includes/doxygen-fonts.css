@@ -1,0 +1,17 @@
+body, table, div, p, dl {
+	font: 400 14px/22px "Helvetica Neue", sans-serif;
+}
+
+#projectname
+{
+  font: 400% sans-serif, "Helvetica Neue";
+  font-weight: lighter;
+}
+
+h2.groupheader {
+  font-family:  sans-serif, "Helvetica Neue";
+  font-weight: lighter;
+}
+
+table.memname {
+}

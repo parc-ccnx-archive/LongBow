@@ -1,0 +1,77 @@
+body {
+	background-color: {{ page.background-color }};
+}
+
+#top {
+	background-color: {{ page.background-color }};
+}
+
+#titlearea {
+	background-color: {{ page.background-color }};
+	color:            {{ page.foreground-color }};
+    box-shadow:       none;
+    border-bottom:    none;
+}
+
+div.header {
+	background-color: {{ page.parc-light-gray }}
+}
+
+.headertitle {
+	background: linear-gradient(white,  #bbbbbb);
+}
+
+#navrow1 {
+	xbackground: linear-gradient(#bbbbbb, white,  #bbbbbb);
+	background: inherit;
+}
+
+#navrow2 {
+	xbackground: linear-gradient(#bbbbbb, white,  #bbbbbb);
+	background: inherit;
+}
+
+#nav-path {
+	xbackground: linear-gradient(#bbbbbb, white,  #bbbbbb);
+}
+
+.tablist {
+	background: inherit;
+}
+
+.tablist a
+{
+    box-shadow: 0px 3px 5px #777;
+    display: block;
+    padding: 0 20px;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: right;
+    color: {{ page.parc-light-blue }};
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    outline: none;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-image: none;
+}
+
+div.contents {
+    box-shadow: 0px 3px 10px #777;
+    background-color: white;
+}
+
+.memitem {
+    xbox-shadow: 0px 3px 10px #777;
+	xborder-top-right-radius: 4px;
+	xborder-top-left-radius: 4px;
+}
+
+.memproto {
+	background-image: none;
+	background-color: {{ page.parc-light-gray }};
+	color: black;
+	text-shadow: none;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+}
