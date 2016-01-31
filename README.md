@@ -26,6 +26,7 @@ handle 6 nostop pass
 Build and install LongBow by executing
 ```
 mkdir build
+cd build
 cmake ..
 make
 make install
