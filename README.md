@@ -43,6 +43,10 @@ LONGBOW=<directory-where-longbow-is-installed>
  -I${LONGBOW}/include -L${LONGBOW}/lib -llongbow -llongbow_textplain.a
 ```
 
+### Contact ###
+
+Please see http://www.ccnx.org/
+
 ### License ###
 
 This software is distributed under the following license:
