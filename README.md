@@ -9,7 +9,7 @@ The LongBow C language software framework
 $ git clone git@github.com:PARC/LongBow.git LongBow
 $ mkdir LongBow.build
 $ cd LongBow.build
-$ cmake -DCMAKE_INSTALL_PREFIX=${INSTALATION_DIRECTORY} ../LongBow
+$ cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} ../LongBow
 $ make
 $ make test
 $ make install
