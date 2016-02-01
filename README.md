@@ -27,6 +27,20 @@ Two other test frameworks were considered and used to develop unit tests: Unity 
 
 ## Using LongBow ##
 
+### Distillery ###
+
+Libparc is part of [CCNx Distillery](https://github.com/PARC/CCNx_Distillery). You may want to get the software via that distribution if you want to work on CCNx.
+
+### Platforms ###
+
+Libparc has been tested in:
+
+- Ubuntu 14.04 (x86_64)
+- MacOSX 10.10
+- MacOSX 10.11
+
+Other platforms and architectures may work.
+
 ### Dependencies ###
 
 - c99 (clang / gcc)
@@ -98,7 +112,11 @@ To do this, you must configure `gdb` to ignore the signal and to allow it to pas
 
 ### Contact ###
 
-Please see http://www.ccnx.org/
+### Contact ###
+
+- [LongBow GitHub](https://github.com/PARC/LongBow)
+- [CCNx Website](http://www.ccnx.org/)
+- [CCNx Mailing List](https://www.ccnx.org/mailman/listinfo/ccnx/)
 
 ### License ###
 
