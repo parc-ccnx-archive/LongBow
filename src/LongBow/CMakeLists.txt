@@ -141,7 +141,6 @@ set(longbowLibraries
 
 foreach(lib ${longbowLibraries})
   install(TARGETS ${lib} LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)
-  set_property(TARGET ${lib} PROPERTY INSTALL_NAME_DIR "${CMAKE_INSTALL_PREFIX}/lib")
 endforeach()
 
 install(FILES ${LIBLONGBOW_HEADER_FILES}     DESTINATION include/LongBow )
