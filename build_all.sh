@@ -6,7 +6,7 @@ export DISTILLERY_GITHUB_USER=isolis
 
 echo setting branch to $GIT_BRANCH
 
-git clone http://github.com/PARC/CCNx_Distillery
+git clone http://github.com/isolis/CCNx_Distillery
 cd CCNx_Distillery
 make update
 cd src
