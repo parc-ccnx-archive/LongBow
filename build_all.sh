@@ -13,8 +13,8 @@ cd src
 rm -rf LongBow
 ln -s ../.. LongBow
 
-for dir in `ls`; do
-  cd $dir
-  git checkout $GIT_BRANCH
-  cd ..
-done
+#for dir in `ls`; do
+#  cd $dir
+#  git checkout $GIT_BRANCH
+#  cd ..
+#done
