@@ -4,8 +4,8 @@ sudo: required
 dist: trusty
 
 before_script:
- - cd CCNx_Distillery
  - git clone http://github.com/isolis/CCNx_Distillery
+ - cd CCNx_Distillery
  - DISTILLERY_GITHUB_USER=isolis make update
  - cd src
  - rm -rf LongBow
