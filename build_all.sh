@@ -18,6 +18,3 @@ for dir in ls; do
   git checkout $GIT_BRANCH
   cd ..
 done
-
-make all
-make check

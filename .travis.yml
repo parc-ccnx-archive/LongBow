@@ -4,8 +4,7 @@ sudo: required
 dist: trusty
 
 before_script:
- - mkdir build
- - cd build
- - cmake ..
+ - build_all.sh
+ - cd CCNx_Distillery
 
-script: make all test
+script: make all check
