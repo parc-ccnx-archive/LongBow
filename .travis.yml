@@ -7,4 +7,4 @@ before_script:
  - ./build_all.sh
  - cd CCNx_Distillery
 
-script: make all check
+script: make step
