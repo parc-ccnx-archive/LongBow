@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.2)
 project(LongBow)
 
 include( CTest )
@@ -19,6 +19,8 @@ MESSAGE( STATUS "Configuring version ${RELEASE_VERSION}" )
 
 add_definitions("-DRELEASE_VERSION=\"${RELEASE_VERSION}\"")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+
+set(CMAKE_C_FLAGS_NOPANTS "${CMAKE_C_FLAGS_NOPANTS} -O3 -DNDEBUG -DLongBow_DISABLE_ASSERTIONS")
 
 include_directories(${PROJECT_BINARY_DIR}/src/LongBow ${PROJECT_SOURCE_DIR}/src)
 
