@@ -1,18 +1,18 @@
 /*
  * Copyright (c) 2014, Xerox Corporation (Xerox) and Palo Alto Research Center (PARC)
  * All rights reserved.
- *  
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- *  
+ *
  *     * Redistributions of source code must retain the above copyright
  *       notice, this list of conditions and the following disclaimer.
  *     * Redistributions in binary form must reproduce the above copyright
  *       notice, this list of conditions and the following disclaimer in the
- *       documentation and/or other materials provided with the distribution. 
+ *       documentation and/or other materials provided with the distribution.
  *     * Patent rights are not granted under this agreement. Patent rights are
  *       available under FRAND terms.
- *  
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -105,9 +105,9 @@ LONGBOW_TEST_CASE(Global, longBowProperties_Get)
     LongBowProperties *properties = longBowProperties_Create();
     char *expected = "value";
     longBowProperties_Set(properties, "name", expected);
-    
+
     const char *actual = longBowProperties_Get(properties, "name");
-    
+
     assertTrue(strcmp(expected, actual) == 0, "Expected %s, actual %s", expected, actual);
     longBowProperties_Destroy(&properties);
 }
@@ -116,13 +116,13 @@ LONGBOW_TEST_CASE(Global, longBowProperties_Length)
 {
     LongBowProperties *properties = longBowProperties_Create();
     assertTrue(longBowProperties_Length(properties) == 0, "Expected empty longBowProperties to be 0 length");
-    
+
     char *expected = "value";
     longBowProperties_Set(properties, "name", expected);
     assertTrue(longBowProperties_Length(properties) == 1, "Expected longBowProperties to be 1 length");
-    
+
     const char *actual = longBowProperties_Get(properties, "name");
-    
+
     assertTrue(strcmp(expected, actual) == 0, "Expected %s, actual %s", expected, actual);
     longBowProperties_Destroy(&properties);
 }
@@ -133,10 +133,10 @@ LONGBOW_TEST_CASE(Global, longBowProperties_Exists)
 
     LongBowProperties *properties = longBowProperties_Create();
     assertFalse(longBowProperties_Exists(properties, expected), "Expected longBowProperties_Exists to be false");
-    
+
     longBowProperties_Set(properties, "name", expected);
     assertTrue(longBowProperties_Exists(properties, "name"), "Expected longBowProperties_Exists to be true");
-    
+
     longBowProperties_Destroy(&properties);
 }
 

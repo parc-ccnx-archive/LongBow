@@ -1,18 +1,18 @@
 /*
  * Copyright (c) 2013-2015, Xerox Corporation (Xerox) and Palo Alto Research Center (PARC)
  * All rights reserved.
- *  
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- *  
+ *
  *     * Redistributions of source code must retain the above copyright
  *       notice, this list of conditions and the following disclaimer.
  *     * Redistributions in binary form must reproduce the above copyright
  *       notice, this list of conditions and the following disclaimer in the
- *       documentation and/or other materials provided with the distribution. 
+ *       documentation and/or other materials provided with the distribution.
  *     * Patent rights are not granted under this agreement. Patent rights are
  *       available under FRAND terms.
- *  
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -78,14 +78,14 @@ static char *
 _longBowRuntime_FormatMessage(const char *format, va_list args)
 {
     char *errnoMessage = _longBowRuntime_FormatErrnoMessage();
-    
+
     char *string;
     if (vasprintf(&string, format, args) == -1) {
         return NULL;
     }
-    
+
     char *result = NULL;
-    
+
     if (errnoMessage != NULL) {
         int check = asprintf(&result, "%s%s", errnoMessage, string);
         free(errnoMessage);
@@ -95,9 +95,9 @@ _longBowRuntime_FormatMessage(const char *format, va_list args)
     } else {
         result = strndup(string, strlen(string));
     }
-    
+
     free(string);
-    
+
     return result;
 }
 
