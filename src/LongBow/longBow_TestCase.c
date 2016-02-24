@@ -1,18 +1,18 @@
 /*
  * Copyright (c) 2013-2014,2015, Xerox Corporation (Xerox) and Palo Alto Research Center (PARC)
  * All rights reserved.
- *  
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- *  
+ *
  *     * Redistributions of source code must retain the above copyright
  *       notice, this list of conditions and the following disclaimer.
  *     * Redistributions in binary form must reproduce the above copyright
  *       notice, this list of conditions and the following disclaimer in the
- *       documentation and/or other materials provided with the distribution. 
+ *       documentation and/or other materials provided with the distribution.
  *     * Patent rights are not granted under this agreement. Patent rights are
  *       available under FRAND terms.
- *  
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -304,13 +304,13 @@ _longBowTestCase_ExpectedVsActualEvent(const LongBowTestCase *testCase)
     if (longBowEventType_Equals(expectedEvent, actualEvent)) {
         result = LONGBOW_STATUS_SUCCEEDED;
     } else if (actualEvent == NULL && expectedEvent != NULL) {
-        
+
         LongBowString *messageString = longBowString_CreateFormat("failed to induce an expected %s event.",
                                                         longBowEventType_GetName(expectedEvent));
 
         LongBowLocation *location = longBowTestCase_CreateLocation(testCase);
         LongBowEvent *event = longBowEvent_Create(expectedEvent, location, "", longBowString_ToString(messageString), NULL);
-        
+
         longBowReportRuntime_Event(event);
         longBowEvent_Destroy(&event);
         longBowString_Destroy(&messageString);
@@ -570,18 +570,6 @@ _longBowTestCase_GetClipBoard(const LongBowTestCase *testCase)
 }
 
 void *
-longBowTestCase_SetClipBoard(const LongBowTestCase *testCase, const char *name, void *data)
-{
-    return longBowClipBoard_Set(_longBowTestCase_GetClipBoard(testCase), name, data);
-}
-
-void *
-longBowTestCase_GetClipBoard(const LongBowTestCase *testCase, const char *name)
-{
-    return longBowClipBoard_Get(_longBowTestCase_GetClipBoard(testCase), name);
-}
-
-void *
 longBowTestCase_SetClipBoardData(const LongBowTestCase *testCase, void *data)
 {
     return longBowClipBoard_Set(_longBowTestCase_GetClipBoard(testCase), "testCase", data);
@@ -590,7 +578,43 @@ longBowTestCase_SetClipBoardData(const LongBowTestCase *testCase, void *data)
 void *
 longBowTestCase_GetClipBoardData(const LongBowTestCase *testCase)
 {
-    return longBowTestCase_GetClipBoard(testCase, "testCase");
+    return longBowClipBoard_Get(_longBowTestCase_GetClipBoard(testCase), "testCase");
+}
+
+void *
+longBowTestCase_Set(const LongBowTestCase *testCase, const char *name, void *value)
+{
+    return longBowClipBoard_Set(_longBowTestCase_GetClipBoard(testCase), name, value);
+}
+
+void *
+longBowTestCase_Get(const LongBowTestCase *testCase, const char *name)
+{
+    return longBowClipBoard_Get(_longBowTestCase_GetClipBoard(testCase), name);
+}
+
+char *
+longBowClipBoard_GetCString(const LongBowTestCase *testCase, const char *name)
+{
+    return longBowClipBoard_GetAsCString(_longBowTestCase_GetClipBoard(testCase), name);
+}
+
+void *
+longBowTestCase_SetInt(const LongBowTestCase *testCase, const char *name, int value)
+{
+    return longBowClipBoard_SetInt(_longBowTestCase_GetClipBoard(testCase), name, (uint64_t) value);
+}
+
+void *
+longBowTestCase_SetCString(const LongBowTestCase *testCase, const char *name, char *value)
+{
+    return longBowClipBoard_SetCString(_longBowTestCase_GetClipBoard(testCase), name, value);
+}
+
+int
+longBowTestCase_GetInt(const LongBowTestCase *testCase, const char *name)
+{
+    return (int) longBowTestCase_Get(testCase, name);
 }
 
 LongBowConfig *

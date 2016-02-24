@@ -9,6 +9,7 @@
  * @author Glenn Scott, Computing Science Laboratory, PARC
  * @copyright 2016 Palo Alto Research Center (PARC), A Xerox Company. All Rights Reserved.
  */
+#include <config.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

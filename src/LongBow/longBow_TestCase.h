@@ -1,18 +1,18 @@
 /*
  * Copyright (c) 2013-2105, Xerox Corporation (Xerox) and Palo Alto Research Center (PARC)
  * All rights reserved.
- *  
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- *  
+ *
  *     * Redistributions of source code must retain the above copyright
  *       notice, this list of conditions and the following disclaimer.
  *     * Redistributions in binary form must reproduce the above copyright
  *       notice, this list of conditions and the following disclaimer in the
- *       documentation and/or other materials provided with the distribution. 
+ *       documentation and/or other materials provided with the distribution.
  *     * Patent rights are not granted under this agreement. Patent rights are
  *       available under FRAND terms.
- *  
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -205,25 +205,25 @@ bool longBowTestCase_IsIncomplete(const LongBowTestCase *testCase);
  */
 bool longBowTestCase_IsFailed(const LongBowTestCase *testCase);
 
-/**
- * Place a value on the Test Case "clipboard"
- *
- * Every Test Case has an associated "clipboard" which is shared between the Test Fixture Setup,
- * Test Case, and Test Fixture Tear Down.
- *
- * @param [in] testCase A pointer to a valid LongBowTestCase instance.
- * @param [in] data The value to share on the clipboard.
- * @return The previous value on the "clipboard", or NULL if no previous value was set.
- */
-void *longBowTestCase_SetClipBoard(const LongBowTestCase *testCase, const char *name, void *data);
+///**
+// * Place a value on the Test Case "clipboard"
+// *
+// * Every Test Case has an associated "clipboard" which is shared between the Test Fixture Setup,
+// * Test Case, and Test Fixture Tear Down.
+// *
+// * @param [in] testCase A pointer to a valid LongBowTestCase instance.
+// * @param [in] data The value to share on the clipboard.
+// * @return The previous value on the "clipboard", or NULL if no previous value was set.
+// */
+//void *longBowTestCase_SetClipBoard(const LongBowTestCase *testCase, const char *name, void *data);
 
-/**
- * Get the named clipboard data from the given `LongBowTestCase`.
- *
- * @param [in] testCase A pointer to a valid LongBowTestCase instance.
- * @param [in] name A nul-terminate, C string of the name of the clipboard entry.
- */
-void *longBowTestCase_GetClipBoard(const LongBowTestCase *testCase, const char *name);
+///**
+// * Get the named clipboard data from the given `LongBowTestCase`.
+// *
+// * @param [in] testCase A pointer to a valid LongBowTestCase instance.
+// * @param [in] name A nul-terminate, C string of the name of the clipboard entry.
+// */
+//void *longBowTestCase_GetClipBoard(const LongBowTestCase *testCase, const char *name);
 
 /**
  * Get the LongBowConfig instance for the given LongBowTestCase instance.
@@ -245,4 +245,16 @@ LongBowConfig *longBowTestCase_GetConfiguration(const LongBowTestCase *testCase)
 void *longBowTestCase_GetClipBoardData(const LongBowTestCase *testCase);
 
 void *longBowTestCase_SetClipBoardData(const LongBowTestCase *testCase, void *data);
+
+void *longBowTestCase_Set(const LongBowTestCase *testCase, const char *name, void *value);
+
+void *longBowTestCase_Get(const LongBowTestCase *testCase, const char *name);
+
+char *longBowClipBoard_GetCString(const LongBowTestCase *testCase, const char *name);
+
+void *longBowTestCase_SetInt(const LongBowTestCase *testCase, const char *name, int value);
+
+void *longBowTestCase_SetCString(const LongBowTestCase *testCase, const char *name, char *value);
+
+int longBowTestCase_GetInt(const LongBowTestCase *testCase, const char *name);
 #endif // LONGBOWTESTCASE_H_

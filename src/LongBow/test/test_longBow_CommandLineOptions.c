@@ -1,18 +1,18 @@
 /*
  * Copyright (c) 2015, Xerox Corporation (Xerox) and Palo Alto Research Center (PARC)
  * All rights reserved.
- *  
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- *  
+ *
  *     * Redistributions of source code must retain the above copyright
  *       notice, this list of conditions and the following disclaimer.
  *     * Redistributions in binary form must reproduce the above copyright
  *       notice, this list of conditions and the following disclaimer in the
- *       documentation and/or other materials provided with the distribution. 
+ *       documentation and/or other materials provided with the distribution.
  *     * Patent rights are not granted under this agreement. Patent rights are
  *       available under FRAND terms.
- *  
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -36,7 +36,7 @@
 LONGBOW_TEST_RUNNER(test_longBow_CommandLineOptions)
 {
     printf("test_longBow_CommandLineOptions\n");
-    
+
     // The following Test Fixtures will run their corresponding Test Cases.
     // Test Fixtures are run in the order specified, but all tests should be idempotent.
     // Never rely on the execution order of tests or share state between them.

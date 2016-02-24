@@ -1,18 +1,18 @@
 /*
  * Copyright (c) 2015, Xerox Corporation (Xerox) and Palo Alto Research Center (PARC)
  * All rights reserved.
- *  
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- *  
+ *
  *     * Redistributions of source code must retain the above copyright
  *       notice, this list of conditions and the following disclaimer.
  *     * Redistributions in binary form must reproduce the above copyright
  *       notice, this list of conditions and the following disclaimer in the
- *       documentation and/or other materials provided with the distribution. 
+ *       documentation and/or other materials provided with the distribution.
  *     * Patent rights are not granted under this agreement. Patent rights are
  *       available under FRAND terms.
- *  
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -27,10 +27,10 @@
 
 // Include the file(s) containing the functions to be tested.
 // This permits internal static functions to be visible to this Test Runner.
-#include "../private/longBow_String.c"
-
 #include <stdio.h>
 #include <inttypes.h>
+
+#include "../private/longBow_String.c"
 
 #include <LongBow/unit-test.h>
 
@@ -61,7 +61,7 @@ LONGBOW_TEST_FIXTURE(Global)
     LONGBOW_RUN_TEST_CASE(Global, longBowString_Append);
     LONGBOW_RUN_TEST_CASE(Global, longBowString_Append_Append);
     LONGBOW_RUN_TEST_CASE(Global, longBowString_Format);
-    
+
     LONGBOW_RUN_TEST_CASE(Global, longBowString_StartsWith_True);
     LONGBOW_RUN_TEST_CASE(Global, longBowString_StartsWith_False);
     LONGBOW_RUN_TEST_CASE(Global, longBowString_Tokenise);
@@ -91,7 +91,7 @@ LONGBOW_TEST_CASE(Global, longBowString_Create)
 {
     LongBowString *string = longBowString_Create(128);
     assertNotNull(string, "Expected non-NULL result from longBowString_Create");
-    
+
     longBowString_Destroy(&string);
     assertNull(string, "Expected the instance pointer to be NULL after longBowString_Destroy");
 }
@@ -101,7 +101,7 @@ LONGBOW_TEST_CASE(Global, longBowString_Append)
     char *expected = "Hello World";
     LongBowString *string = longBowString_Create(0);
     longBowString_Append(string, expected);
-    
+
     assertTrue(strcmp(expected, string->buffer) == 0,
                "Expected buffer to contain '%s', actual '%s'", expected, string->buffer);
     longBowString_Destroy(&string);
@@ -114,7 +114,7 @@ LONGBOW_TEST_CASE(Global, longBowString_Append_Append)
     longBowString_Append(string, "Hello");
     longBowString_Append(string, " ");
     longBowString_Append(string, "World");
-    
+
     assertTrue(strcmp(expected, string->buffer) == 0,
                "Expected buffer to contain '%s', actual '%s'", expected, string->buffer);
     longBowString_Destroy(&string);
@@ -125,7 +125,7 @@ LONGBOW_TEST_CASE(Global, longBowString_Format)
     char *expected = "Hello World";
     LongBowString *string = longBowString_Create(0);
     longBowString_Format(string, "%s", expected);
-    
+
     assertTrue(strcmp(expected, string->buffer) == 0,
                "Expected buffer to contain '%s', actual '%s'", expected, string->buffer);
     longBowString_Destroy(&string);
@@ -140,14 +140,14 @@ LONGBOW_TEST_CASE(Global, longBowString_StartsWith_True)
 LONGBOW_TEST_CASE(Global, longBowString_StartsWith_False)
 {
     bool actual = longBowString_StartsWith("abcde", "ayz");
-    
+
     assertFalse(actual, "Expected false");
 }
 
 LONGBOW_TEST_CASE(Global, longBowString_Tokenise)
 {
     LongBowArrayList *actual = longBowString_Tokenise("--t.x=10", "-=");
-    
+
     assertTrue(strcmp("t.x", longBowArrayList_Get(actual, 0)) == 0,
                "Expected first token to be t.x, actual %s", (char *) longBowArrayList_Get(actual, 0));
     assertTrue(strcmp("10", longBowArrayList_Get(actual, 1)) == 0,
@@ -159,18 +159,18 @@ LONGBOW_TEST_CASE(Global, longBowString_Tokenise)
 LONGBOW_TEST_CASE(Global, longBowString_Tokenise_empty)
 {
     LongBowArrayList *actual = longBowString_Tokenise("", "-=");
-    
+
     assertTrue(longBowArrayList_Length(actual) == 0, "Expected zero length LongBowArrayList, actual %zd", longBowArrayList_Length(actual));
-    
+
     longBowArrayList_Destroy(&actual);
 }
 
 LONGBOW_TEST_CASE(Global, longBowString_Tokenise_NULL)
 {
     LongBowArrayList *actual = longBowString_Tokenise(NULL, "-=");
-    
+
     assertTrue(longBowArrayList_Length(actual) == 0, "Expected zero length LongBowArrayList, actual %zd", longBowArrayList_Length(actual));
-    
+
     longBowArrayList_Destroy(&actual);
 }
 
