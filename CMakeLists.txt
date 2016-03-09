@@ -4,8 +4,11 @@ project(LongBow)
 include( CTest )
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
+
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 execute_process(COMMAND ${PROJECT_SOURCE_DIR}/cmake/get_version.sh ${PROJECT_SOURCE_DIR} 
   OUTPUT_VARIABLE RELEASE_VERSION 
@@ -45,6 +48,13 @@ set( UNCRUSTIFY_CONFIG ${CMAKE_INSTALL_PREFIX}/etc/parc_uncrustify.cfg )
 
 message( "-- Install Python Dir:  ${INSTALL_PYTHON_DIR}")
 message( "-- Dependency Python Dir:  ${DEPENDENCY_DIR}/etc/site-packages")
+
+macro(AddTest testFile)
+  add_executable(${ARGV0} ${ARGV0}.c)
+  target_link_libraries(${ARGV0} ${PARC_BIN_LIBRARIES})
+  add_test(${ARGV0} ${ARGV0})
+  set_target_properties(${ARGV0} PROPERTIES FOLDER Test)
+endmacro(AddTest)
 
 add_subdirectory(src)
 add_subdirectory(documentation)

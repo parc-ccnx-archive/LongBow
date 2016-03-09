@@ -9,6 +9,13 @@ set(LONGBOW_REPORT_HEADER_FILES
   Reporting/longBowReport_Runtime.h
   )
 
+set(LONGBOW_REPORT_BASE_SOURCE_FILES
+    Reporting/longBowReport_Runtime.c
+    Reporting/longBowReport_Testing.c
+	${LONGBOW_REPORT_HEADER_FILES})
+
+source_group(report-base FILES ${LONGBOW_REPORT_BASE_SOURCE_FILES})
+
 set(LONGBOW_REPORT_ANSI_SOURCE_FILES
     Reporting/ANSITerm/longBowReport_Runtime.c
     Reporting/ANSITerm/longBowReport_Runtime.h
@@ -16,19 +23,20 @@ set(LONGBOW_REPORT_ANSI_SOURCE_FILES
     Reporting/ANSITerm/longBowReportANSITerminal_About.c
     Reporting/ANSITerm/longBowReportANSITerminal_About.h)
 
+source_group(report-ansiterm FILES ${LONGBOW_REPORT_ANSI_SOURCE_FILES})
+
 set(LONGBOW_REPORT_TEXT_SOURCE_FILES
     Reporting/TextPlain/longBowReport_Runtime.c
     Reporting/TextPlain/longBowReport_Testing.c
     Reporting/TextPlain/longBowReportTextPlain_About.c
     Reporting/TextPlain/longBowReportTextPlain_About.h)
 
-set(LONGBOW_REPORT_BASE_SOURCE_FILES
-    Reporting/longBowReport_Runtime.c
-    Reporting/longBowReport_Testing.c
-	${LONGBOW_REPORT_HEADER_FILES})
+source_group(report-textplain FILES ${LONGBOW_REPORT_TEXT_SOURCE_FILES})
 
 set(LONGBOW_CONFIG_SOURCE_FILES
-    command-line/liblongbow-config.c)
+	command-line/liblongbow-config.c)
+
+source_group(longbow-config FILES ${LONGBOW_CONFIG_SOURCE_FILES})
 
 set(LIBLONGBOW_HEADER_FILES
         stubs/execinfo.h
@@ -65,8 +73,6 @@ set(LIBLONGBOW_HEADER_FILES
         unit-test.h
 		)
 
-
-
 set(LIBLONGBOW_SOURCE_FILES
         private/longBow_ArrayList.h
         private/longBow_Memory.h
@@ -100,6 +106,7 @@ set(LIBLONGBOW_SOURCE_FILES
         longBow_UnitTesting.c
 		${LIBLONGBOW_HEADER_FILES})
 
+source_group(longbow FILES ${LIBLONGBOW_SOURCE_FILES})
 
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
     set(CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS "${CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS} -undefined dynamic_lookup")
@@ -108,6 +115,7 @@ endif()
 
 add_library(longbow-ansiterm STATIC ${LONGBOW_REPORT_ANSI_SOURCE_FILES} ${LONGBOW_REPORT_BASE_SOURCE_FILES})
 add_library(longbow-ansiterm.shared SHARED ${LONGBOW_REPORT_ANSI_SOURCE_FILES} ${LONGBOW_REPORT_BASE_SOURCE_FILES})
+
 set_target_properties(longbow-ansiterm.shared PROPERTIES 
   SOVERSION 1 
   VERSION 1.0
@@ -115,6 +123,7 @@ set_target_properties(longbow-ansiterm.shared PROPERTIES
 
 add_library(longbow-textplain STATIC ${LONGBOW_REPORT_TEXT_SOURCE_FILES} ${LONGBOW_REPORT_BASE_SOURCE_FILES})
 add_library(longbow-textplain.shared SHARED ${LONGBOW_REPORT_TEXT_SOURCE_FILES} ${LONGBOW_REPORT_BASE_SOURCE_FILES})
+
 set_target_properties(longbow-textplain.shared PROPERTIES 
   SOVERSION 1 
   VERSION 1.0
@@ -122,6 +131,7 @@ set_target_properties(longbow-textplain.shared PROPERTIES
 
 add_library(longbow STATIC ${LIBLONGBOW_SOURCE_FILES})
 add_library(longbow.shared SHARED ${LIBLONGBOW_SOURCE_FILES})
+
 set_target_properties(longbow.shared PROPERTIES 
   SOVERSION 1 
   VERSION 1.0
