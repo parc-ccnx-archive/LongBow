@@ -27,6 +27,7 @@
 # @author Glenn Scott, Palo Alto Research Center (PARC)
 # @copyright 2015, Xerox Corporation (Xerox)and Palo Alto Research Center (PARC).  All rights reserved.
 
+import os
 import sys
 import argparse
 
@@ -76,7 +77,7 @@ Finegrain Output (--finegrain):
 /Users/cwood/Projects/DistilleryBranches/Case1073/Libparc/parc/algol parc_Object typedef-name _ObjectHeader 100.0
 '''
 
-    parser = argparse.ArgumentParser(prog='parc-name-grade', formatter_class=argparse.RawDescriptionHelpFormatter, description=desc)
+    parser = argparse.ArgumentParser(prog='longbow-name-report', formatter_class=argparse.RawDescriptionHelpFormatter, description=desc)
     parser.add_argument('-a', '--average', default=False, action="store_true", help="Print an average summary of the naming conformance results for all modules")
     parser.add_argument('-s', '--summary', default=False, action="store_true", help="Print a summary of the naming conformance results for each module")
     parser.add_argument('-f', '--finegrain', default=False, action="store_true", help="Print the individual results for each function, typedef, and enumeration in each module.")
@@ -84,6 +85,7 @@ Finegrain Output (--finegrain):
     parser.add_argument('-d', '--distribution', default="[99, 90]", action="store", required=False, type=str, help="a list containing the score distributions for pretty-printing. Default [99, 90]")
     parser.add_argument('-t', '--trace', default=False, action="store_true", help="Turn on exception tracing to debug an issue with the tool.")
     parser.add_argument('-', '--stdin', default=False, action="store_true", required=False, help="Read the list of files from standard input.")
+    parser.add_argument('-p', '--opath', default="", action="store", required=False, type=str, help="Specify the path for object files.")
     parser.add_argument("files", help="Files to check", nargs="*")
 
     args = parser.parse_args()
@@ -99,4 +101,4 @@ Finegrain Output (--finegrain):
         parser.print_usage()
         sys.exit(1)
 
-    NameReport.commandLineMain(args, targets)
+    NameReport.commandLineMain(args, targets, args.opath)

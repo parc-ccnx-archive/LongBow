@@ -78,6 +78,8 @@ Results are:
                         help="A list containing the score distributions for pretty-printing. Default [95, 90]")
     parser.add_argument('-T', '--includeTestSources', default=False, action="store_true", required=False,
                         help="Include analysis of the test sources. Default False")
+    parser.add_argument('-t', '--testDir', default="", action="store", required=False, type=str,
+                        help="Directory hint for locating test files.")
 
     parser.add_argument("files", help="Files to check", nargs="*")
 
@@ -96,4 +98,4 @@ Results are:
     else:
         fileNames = args.files
 
-    CoverageReport.commandLineMain(args, fileNames)
+    CoverageReport.commandLineMain(args, fileNames, args.testDir)
