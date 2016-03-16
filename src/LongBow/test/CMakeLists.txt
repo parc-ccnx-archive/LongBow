@@ -1,5 +1,3 @@
-
-
 # Enable gcov output for the tests
 add_definitions(--coverage)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} " --coverage")
@@ -9,6 +7,7 @@ macro(AddTest testFile)
   add_executable(${ARGV0} ${ARGV0}.c)
   target_link_libraries(${ARGV0} longbow longbow-ansiterm)
   add_test(${ARGV0} ${ARGV0})
+  set_target_properties(${ARGV0} PROPERTIES FOLDER Test)
 endmacro(AddTest)
 
 set(TestsExpectedToFail
