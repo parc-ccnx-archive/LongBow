@@ -85,7 +85,7 @@ Finegrain Output (--finegrain):
     parser.add_argument('-d', '--distribution', default="[99, 90]", action="store", required=False, type=str, help="a list containing the score distributions for pretty-printing. Default [99, 90]")
     parser.add_argument('-t', '--trace', default=False, action="store_true", help="Turn on exception tracing to debug an issue with the tool.")
     parser.add_argument('-', '--stdin', default=False, action="store_true", required=False, help="Read the list of files from standard input.")
-    parser.add_argument('-p', '--opath', default="", action="store", required=False, type=str, help="Specify the path for object files.")
+    parser.add_argument('-p', '--opath', default="", action="store", required=False, type=str, help="Specify the path for object files, can be a path to a static library.")
     parser.add_argument("files", help="Files to check", nargs="*")
 
     args = parser.parse_args()
