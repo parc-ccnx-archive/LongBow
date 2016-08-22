@@ -1,3 +1,23 @@
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+//<![CDATA[
+var sc_project=11081165; 
+var sc_invisible=0; 
+var sc_security="5698c63a"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter_xhtml.js'></"+"script>");
+//]]>
+</script>
+<noscript><div class="statcounter"><a title="shopify site
+analytics" href="http://statcounter.com/shopify/"
+class="statcounter"><img class="statcounter"
+src="//c.statcounter.com/11081165/0/5698c63a/0/"
+alt="shopify site analytics" /></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
 LongBow
 =======
 _The Best Defense is a Good Offense_
