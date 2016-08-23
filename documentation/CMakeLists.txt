@@ -13,4 +13,18 @@ if(DOXYGEN_FOUND)
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
         COMMENT "The file longbow-documentation.tar contains the HTML website suitable to update/replace the gh-pages branch of this repository." VERBATIM )
 
+  add_custom_target(documentation-install
+	git init .
+	DEPENDS documentation
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/longbow-documentation/html
+	COMMAND git checkout -b gh-pages
+	COMMAND git add .
+	COMMAND git commit -am 'Override all previous versions'
+	COMMAND git remote add origin http://githubenterprise.parc.com/CCNX/LongBow
+	)
+
+#	COMMAND "/bin/echo git commit -am 'Override all previous versions'"
+#	COMMAND "/bin/echo git remote add origin http://githubenterprise.parc.com/CCNX/LongBow "
+#	COMMAND "/bin/echo git push origin gh-pages -f"
+
 endif(DOXYGEN_FOUND)
