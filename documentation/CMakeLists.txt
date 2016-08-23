@@ -37,4 +37,9 @@ if(DOXYGEN_FOUND)
         WORKING_DIRECTORY ${HTML_PATH}
 	COMMAND git push parc gh-pages -f)
 
+  add_custom_target(documentation-install-github
+	DEPENDS ${HTML_PATH}/.git/config
+        WORKING_DIRECTORY ${HTML_PATH}
+	COMMAND git push github gh-pages -f)
+
 endif(DOXYGEN_FOUND)
