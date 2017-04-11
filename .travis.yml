@@ -1,0 +1,16 @@
+language: c
+
+sudo: required
+dist: trusty
+
+before_script:
+ - git clone http://github.com/isolis/CCNx_Distillery
+ - cd CCNx_Distillery
+ - DISTILLERY_GITHUB_USER=isolis make update
+ - cd src
+ - rm -rf LongBow
+ - ln -s ../.. LongBow
+ - cd ..
+
+
+script: make all check
