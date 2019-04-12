@@ -4,9 +4,13 @@ _The Best Defense is a Good Offense_
 
 The LongBow C language software framework
 
+# Deprecated Code #
+This repository is no longer active.  See the [Community ICN](https://wiki.fd.io/view/Cicn) project
+for the latest code.  The [CICN Code Repository](https://github.com/FDio/cicn) should be used for all new projects.
+
 ## Quick Start ##
 ```
-$ git clone git@github.com:PARC/LongBow.git LongBow
+$ git clone git@github.com:parc-ccnx-archive/LongBow.git LongBow
 $ mkdir LongBow.build
 $ cd LongBow.build
 $ cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} ../LongBow
@@ -21,7 +25,7 @@ LongBow is a C language software framework that combines the fail-fast philosoph
 
 Using LongBow's to aid an offensive-development stance is largely a matter of using its entry and exit assertions in your code.  Similarly using LongBow's unit-test framework uses the same entry and exit assertions in the unit test cases themselves.  The runtime assertions and the unit-test assertions work together in the unit test framework and do not conflict.
 
-This framework grew out of the need for a unit testing for Test Driven Development on the [CCNx Distillery software distribution](https://github.com/PARC/CCNx_Distillery).
+This framework grew out of the need for a unit testing for Test Driven Development on the [CCNx Distillery software distribution](https://github.com/parc-ccnx-archive/CCNx_Distillery).
 
 Two other test frameworks were considered and used to develop unit tests: Unity and GoogleTest.  Ultimately Unity wash't used (although this framework is indebted to Unity for inspiration) mainly due to ease-of-use problems, and Googletest was not used mainly because it is a C++ framework, is not compatible with some features of C99, and is difficult to use.
 
@@ -29,7 +33,7 @@ Two other test frameworks were considered and used to develop unit tests: Unity 
 
 ### Distillery ###
 
-Libparc is part of [CCNx Distillery](https://github.com/PARC/CCNx_Distillery). You may want to get the software via that distribution if you want to work on CCNx.
+Libparc is part of [CCNx Distillery](https://github.com/parc-ccnx-archive/CCNx_Distillery). You may want to get the software via that distribution if you want to work on CCNx.
 
 ### Platforms ###
 
@@ -60,7 +64,7 @@ LongBow is built using cmake. You will need to have CMake 3.4 installed in order
 
 ```
 Download LongBow
-$ git clone git@github.com:PARC/LongBow.git LongBow
+$ git clone git@github.com:parc-ccnx-archive/LongBow.git LongBow
 
 Create build directory
 $ mkdir LongBow.build
@@ -96,7 +100,7 @@ LONGBOW_DIR=<directory-where-longbow-is-installed>
 
 #### LongBow Unit Testing
 
-LongBow unit testing works in conjuction with the LongBow library. Please take a look at the examples and the documentation for information on how to write unit tests.  You can also look at some of the software that uses LongBow for unit testing as examples.  A good starting point would be [Libparc](https://github.com/PARC/Libparc).
+LongBow unit testing works in conjuction with the LongBow library. Please take a look at the examples and the documentation for information on how to write unit tests.  You can also look at some of the software that uses LongBow for unit testing as examples.  A good starting point would be [Libparc](https://github.com/parc-ccnx-archive/Libparc).
 
 #### LongBow Utilities
 
@@ -114,7 +118,7 @@ To do this, you must configure `gdb` to ignore the signal and to allow it to pas
 
 ### Contact ###
 
-- [LongBow GitHub](https://github.com/PARC/LongBow)
+- [LongBow GitHub](https://github.com/parc-ccnx-archive/LongBow)
 - [CCNx Website](http://www.ccnx.org/)
 - [CCNx Mailing List](https://www.ccnx.org/mailman/listinfo/ccnx/)
 
