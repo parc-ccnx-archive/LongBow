@@ -8,6 +8,8 @@ The LongBow C language software framework
 This repository is no longer active.  See the [Community ICN](https://wiki.fd.io/view/Cicn) project
 for the latest code.  The [CICN Code Repository](https://github.com/FDio/cicn) should be used for all new projects.
 
+LongBow is part of the CICN [cframework](https://github.com/FDio/cicn/tree/cframework/master) repository.
+
 ## Quick Start ##
 ```
 $ git clone git@github.com:parc-ccnx-archive/LongBow.git LongBow
